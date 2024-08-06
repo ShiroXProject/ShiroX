@@ -10,6 +10,7 @@ echo
 echo █▀ █▀▀ █▄░█ █▀ █
 echo ▄█ ██▄ █░▀█ ▄█ █
 echo
+echo
 echo × SHIROX SENSI FREE FIRE ×
 sleep 0.5
 echo
