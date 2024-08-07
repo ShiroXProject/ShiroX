@@ -3,6 +3,16 @@ epepmax=com.dts.freefiremax
 EXPIRED=202408013
 DATE=$(date +'%Y%m%d')
 reso=1440x3200
+printf() {
+  text="$1"
+  i=0
+  while [ $i -lt ${#text} ]; do
+    echo -en "${text:$i:1}"
+    sleep 0.02
+    i=$((i + 1))
+  done
+  echo
+}
 if [ "$DATE" -ge "$EXPIRED" ]; then
 echo
 echo █▀ █░█ █ █▀█ █▀█ ▄▄ ▀▄▀
@@ -11,50 +21,50 @@ echo
 echo █▀ █▀▀ █▄░█ █▀ █
 echo ▄█ ██▄ █░▀█ ▄█ █
 echo
-echo × SHIROX SENSI FREE FIRE ×
+printf "SHIROX SENSI FREE FIRE"
 sleep 0.5
 echo
 sleep 2.0
-echo Checking Expired...
+printf "Checking Expired..."
 sleep 4.0
 echo
-echo Maaf Script Telah Expired!!
+printf "Maaf Script Telah Expired!!"
 echo Silahkan Update Script Ke Versi Terbaru!!
 else
 echo
 echo █▀ █░█ █ █▀█ █▀█ ▄▄ ▀▄▀
 echo ▄█ █▀█ █ █▀▄ █▄█ ░░ █░█
 echo
-echo █▀█ █▀▀ █▀▀ █▀▀ █▀▄ █ ▀█▀
-echo █▀▄ ██▄ █▄█ ██▄ █▄▀ █ ░█░
+echo █▀ █▀▀ █▄░█ █▀ █
+echo ▄█ ██▄ █░▀█ ▄█ █
 sleep 0.5
 echo
-echo × SHIROX SENSI FREE FIRE ×
+printf "× SHIROX SENSI FREE FIRE ×"
 sleep 0.5
 echo
 sleep 2.0
-echo Checking Expired...
+printf "Checking Expired..."
 sleep 4.0
 echo
-echo "[ Modder ]"
-echo "> T.me/imkangshiro"
+printf "[ Modder ]"
+printf "> T.me/imkangshiro"
 sleep 0.5
-echo "[ Source ]"
-echo "> T.me/ShiroTeam"
+printf "[ Source ]"
+printf "> T.me/ShiroTeam"
 sleep 0.5
-echo "[ Version ]"
-echo "> Public 2.0"
+printf "[ Version ]"
+printf "> Public 2.0"
 sleep 0.5
-echo "[ Catatan ]"
-echo "> Copot Module Setiap Selesai Main"
-echo "> Agar Tidak Merusak Device Kalian"
+printf "[ Catatan ]"
+printf "> Copot Module Setiap Selesai Main"
+printf "> Agar Tidak Merusak Device Kalian"
 sleep 1.0
 echo
-echo "[ Procces Applying Regedit ]"
+printf "[ Procces Applying Regedit ]"
 sleep 1.0
-echo "- Super Sensitivity✓"
+printf "- Super Sensitivity✓"
 sleep 0.5
-echo "- Performance Compile✓"
+printf "- Performance Compile✓"
 sleep 0.5
 cmd package compile -m speed --secondary-dex -f com.dts.freefireth> /dev/null 2>&1
 cmd package compile -m speed --secondary-dex -f com.dts.freefiremax> /dev/null 2>&1
@@ -69,7 +79,7 @@ cmd package compile -m everything-profile -f com.dts.freefiremax> /dev/null 2>&1
 pm log-visibility --disable com.dts.freefireth> /dev/null 2>&1
 pm log-visibility --disable com.dts.freefiremax> /dev/null 2>&1
 sleep 0.5
-echo "- Aim Tracking 2.0✓"
+printf "- Aim Tracking 2.0✓"
 reduce_shake() {
 x1=$(expr $RANDOM % 1000 + 1)
 y1=$(expr $RANDOM % 1000 + 1)
@@ -104,7 +114,7 @@ sensi_calibrar() {
 reduce_shake
 sensi_calibrar
 sleep 0.5
-echo "- High Responsible Touch✓"
+printf "- High Responsible Touch✓"
 {
 settings put global touch.pressure.scale 0.001
 settings put system touch.pressure.scale 0.001
@@ -163,7 +173,7 @@ setprop debug.gpurend.vsync true
 settings put secure thermal_temp_state_vaule 0
 }> /dev/null 2>&1
 sleep 0.5
-echo "- Optimize Free Fire✓"
+printf "- Optimize Free Fire✓"
 {
 cmd game mode performance ${epep}
 cmd game mode performance ${epepmax}
@@ -200,10 +210,10 @@ rm -f /sdcard/Android/data/com.dts.freefiremax/files/ffrtc_log.txt*> /dev/null 2
 rm -f /sdcard/Android/data/com.dts.freefiremax/files/ffrtc_log_bak.txt*> /dev/null 2>&1
 }> /dev/null 2>&1
 echo
-echo "[ Script Activated ]"
+printf "[ Script Activated ]"
 echo
 sleep 1.0
-echo "Open Free Fire.."
+printf "Open Free Fire.."
 sleep 2.0
 package_th=$(pm list packages | grep com.dts.freefireth)
 package_max=$(pm list packages | grep com.dts.freefiremax)
@@ -220,7 +230,7 @@ else
 svc wifi enable
 cmd connectivity airplane-mode disable
 svc data enable
-echo "Silahkan install Free Fire terlebih dahulu."
+printf "Silahkan install Free Fire terlebih dahulu."
 exit 1
 fi
 fi
